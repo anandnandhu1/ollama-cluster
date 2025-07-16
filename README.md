@@ -5,7 +5,9 @@ This file should:
 	•	Build and push the image
 	•	Deploy to EKS
 	•	Run monitoring and logging
-  •	load test
+        •	load test
+
+ ![Image](https://github.com/user-attachments/assets/d1b6e2e5-6e3f-4ae7-8d5d-4df4f63a4f2c)
 
 ARCHITECTURE DIAGRAM
 
