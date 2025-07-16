@@ -41,6 +41,14 @@ ELK Stack with Filebeat
 	•	Sends to Logstash → Elasticsearch
 	•	Kibana for searching and viewing logs
 
+LOAD TEST:
+   install locust:
+     pip install locust
+   i save script as locustfile.py pls check
+     run the test using bash enter locust
+  open the browser at http://localhost:8089
+      enter no of users: example 50
+
  everything i have created seperate file please check 
 
  
