@@ -11,7 +11,6 @@ This file should:
 
 ARCHITECTURE DIAGRAM
 
-Include the file: architecture.png
 
  Deployment steps:
   we use docker for build and we push to ECR
