@@ -1,0 +1,35 @@
+Install promethous grafana via Helm
+  step 1:
+    add the HELM REPO:
+      helm repo add prometheus-community htpps://prometheus-community.github.io/helm-charts
+      helm repo add grafana https://grafana.github.io/helm-charts
+      helm repo update
+  step 2:
+     install promethous
+       helm install prometheus prometheus-community/kube-prometheus-stack \ --namespace monitoring --create-namespace
+ step 3: 
+   access promethous and grafana:
+     grafana UI:
+        kubectl port-forward -n monitoring svc/prometheus-grafana 3000:80
+   Open browser: http://localhost:3000
+	    Default credentials:
+	    Username: admin
+	    Password: (run kubectl get secret prometheus-grafana -n monitoring -o jsonpath="{.data.admin-password}" | base64 --decode)
+
+INSTALL ELK VIA HELM:
+   add elastic helm repo:
+     helm repo add elastic https://helm.elastic.co
+     helm repo update
+  install elasticsearch:
+     helm install elasticsearch elastic/elasticsearch \
+    --namespace logging --create-namespace \
+    --set replicas=1 \
+    --set minimumMasterNodes=1
+  install kibana:
+    helm install kibana elastic/kibana \
+    --namespace logging \
+    --set service.type=ClusterIP
+  install filebeat:
+    helm install filebeat elastic/filebeat \
+    --namespace logging \
+    --set elasticsearch.hosts[0]="http://elasticsearch-master:9200"
