@@ -30,6 +30,9 @@ HELM CHARTS:
 ARGOCD:
     we use argocd for continuously deployment
 
+SECURITY:
+   we use to create AWS IAM POLICY and ROLES attach to the instances for authentication and authorization
+
 Monitoring & Logging:
 
 Prometheus + Grafana
