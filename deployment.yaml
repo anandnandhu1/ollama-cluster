@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ollama-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: ollama
@@ -17,9 +17,6 @@ spec:
         image: <your-ecr-repo>:latest
         env:
         - name: OLLAMA_NUM_PARALLEL
-          value: "4"
+          value: "2"
         ports:
         - containerPort: 11434
-        resources:
-          limits:
-            nvidia.com/gpu: 1
