@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   name: ollama-ingress
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/auth-type: basic
 spec:
   rules:
@@ -17,7 +16,4 @@ spec:
             name: ollama-service
             port:
               number: 80
-  tls:
-  - hosts:
-    - ollama.yourdomain.com
-    secretName: ollama-tls
+  
