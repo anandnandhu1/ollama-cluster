@@ -1,3 +1,3 @@
 FROM ollama/ollama
-RUN ollama pull gemma:3b
-ENV OLLAMA_NUM_PARALLEL=4
+RUN ollama pull tinyllama
+ENV OLLAMA_NUM_PARALLEL=2
